@@ -1,0 +1,29 @@
+Ejercicio 1
+Mostrar todos los conjuntos de caracteres que contengan la palabra "utf".
+SHOW CHARACTER SET LIKE '%utf%';
+
+Ejercicio 2
+Muestra todos los collations disponibles para el conjunto de caracteres latin1.
+SHOW COLLATION WHERE Charset = 'latin1';
+¿Cuál es el collation predeterminado de latin1?
+El collation predeterminado es latin1_swedish_ci.
+
+Ejercicio 3
+Filtra las collations del conjunto utf8mb4 que sean sensibles a acentos (as).
+SHOW COLLATION WHERE Charset = 'utf8mb4' AND Collation LIKE '%as%';
+
+Filtra las collations del conjunto utf8mb4 que sean sensibles a mayúsculas (cs).
+SHOW COLLATION WHERE Charset = 'utf8mb4' AND Collation LIKE '%cs%';
+
+Ejercicio 4
+Compara si ó es igual a o utilizando el collation utf8mb4_0900_ai_ci.
+SELECT 'ó' = 'o' COLLATE utf8mb4_0900_ai_ci;
+
+Compara si ó es diferente de o utilizando el collation utf8mb4_0900_as_ci.
+SELECT 'ó' <> 'o' COLLATE utf8mb4_0900_as_ci;
+
+Ejercicio 5
+Compara si ñ es igual a n utilizando los collations utf8mb4_spanish_ci y utf8mb4_spanish2_ci.
+
+SELECT 'ñ' = 'n' COLLATE utf8mb4_spanish_ci;
+SELECT 'ñ' = 'n' COLLATE utf8mb4_spanish2_ci;
